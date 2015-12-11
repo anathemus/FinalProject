@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C790AA741C17948D004FE039 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA731C17948D004FE039 /* main.m */; };
+		C790AA771C17948D004FE039 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA761C17948D004FE039 /* AppDelegate.m */; };
+		C790AA7A1C17948D004FE039 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA791C17948D004FE039 /* FirstViewController.m */; };
+		C790AA7D1C17948D004FE039 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA7C1C17948D004FE039 /* SecondViewController.m */; };
+		C790AA801C17948D004FE039 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C790AA7E1C17948D004FE039 /* Main.storyboard */; };
+		C790AA821C17948D004FE039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C790AA811C17948D004FE039 /* Assets.xcassets */; };
+		C790AA851C17948D004FE039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C790AA831C17948D004FE039 /* LaunchScreen.storyboard */; };
+		C790AA901C17948D004FE039 /* Put_It_DownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA8F1C17948D004FE039 /* Put_It_DownTests.m */; };
+		C790AA9B1C17948D004FE039 /* Put_It_DownUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA9A1C17948D004FE039 /* Put_It_DownUITests.m */; };
+		C790AAA91C179506004FE039 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C790AAA81C179506004FE039 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C790AA8C1C17948D004FE039 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C790AA671C17948D004FE039 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C790AA6E1C17948D004FE039;
+			remoteInfo = "Put It Down";
+		};
+		C790AA971C17948D004FE039 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C790AA671C17948D004FE039 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C790AA6E1C17948D004FE039;
+			remoteInfo = "Put It Down";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C790AA6F1C17948D004FE039 /* Put It Down.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Put It Down.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C790AA731C17948D004FE039 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C790AA751C17948D004FE039 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C790AA761C17948D004FE039 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C790AA781C17948D004FE039 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		C790AA791C17948D004FE039 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		C790AA7B1C17948D004FE039 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C790AA7C1C17948D004FE039 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C790AA7F1C17948D004FE039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C790AA811C17948D004FE039 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C790AA841C17948D004FE039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C790AA861C17948D004FE039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C790AA8B1C17948D004FE039 /* Put It DownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Put It DownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C790AA8F1C17948D004FE039 /* Put_It_DownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Put_It_DownTests.m; sourceTree = "<group>"; };
+		C790AA911C17948D004FE039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C790AA961C17948D004FE039 /* Put It DownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Put It DownUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C790AA9A1C17948D004FE039 /* Put_It_DownUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Put_It_DownUITests.m; sourceTree = "<group>"; };
+		C790AA9C1C17948D004FE039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C790AAA81C179506004FE039 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C790AA6C1C17948D004FE039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C790AAA91C179506004FE039 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C790AA881C17948D004FE039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C790AA931C17948D004FE039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C790AA661C17948D004FE039 = {
+			isa = PBXGroup;
+			children = (
+				C790AAA81C179506004FE039 /* CoreLocation.framework */,
+				C790AA711C17948D004FE039 /* Put It Down */,
+				C790AA8E1C17948D004FE039 /* Put It DownTests */,
+				C790AA991C17948D004FE039 /* Put It DownUITests */,
+				C790AA701C17948D004FE039 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C790AA701C17948D004FE039 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C790AA6F1C17948D004FE039 /* Put It Down.app */,
+				C790AA8B1C17948D004FE039 /* Put It DownTests.xctest */,
+				C790AA961C17948D004FE039 /* Put It DownUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C790AA711C17948D004FE039 /* Put It Down */ = {
+			isa = PBXGroup;
+			children = (
+				C790AA751C17948D004FE039 /* AppDelegate.h */,
+				C790AA761C17948D004FE039 /* AppDelegate.m */,
+				C790AA781C17948D004FE039 /* FirstViewController.h */,
+				C790AA791C17948D004FE039 /* FirstViewController.m */,
+				C790AA7B1C17948D004FE039 /* SecondViewController.h */,
+				C790AA7C1C17948D004FE039 /* SecondViewController.m */,
+				C790AA7E1C17948D004FE039 /* Main.storyboard */,
+				C790AA811C17948D004FE039 /* Assets.xcassets */,
+				C790AA831C17948D004FE039 /* LaunchScreen.storyboard */,
+				C790AA861C17948D004FE039 /* Info.plist */,
+				C790AA721C17948D004FE039 /* Supporting Files */,
+			);
+			path = "Put It Down";
+			sourceTree = "<group>";
+		};
+		C790AA721C17948D004FE039 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C790AA731C17948D004FE039 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C790AA8E1C17948D004FE039 /* Put It DownTests */ = {
+			isa = PBXGroup;
+			children = (
+				C790AA8F1C17948D004FE039 /* Put_It_DownTests.m */,
+				C790AA911C17948D004FE039 /* Info.plist */,
+			);
+			path = "Put It DownTests";
+			sourceTree = "<group>";
+		};
+		C790AA991C17948D004FE039 /* Put It DownUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C790AA9A1C17948D004FE039 /* Put_It_DownUITests.m */,
+				C790AA9C1C17948D004FE039 /* Info.plist */,
+			);
+			path = "Put It DownUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C790AA6E1C17948D004FE039 /* Put It Down */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C790AA9F1C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It Down" */;
+			buildPhases = (
+				C790AA6B1C17948D004FE039 /* Sources */,
+				C790AA6C1C17948D004FE039 /* Frameworks */,
+				C790AA6D1C17948D004FE039 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Put It Down";
+			productName = "Put It Down";
+			productReference = C790AA6F1C17948D004FE039 /* Put It Down.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C790AA8A1C17948D004FE039 /* Put It DownTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C790AAA21C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It DownTests" */;
+			buildPhases = (
+				C790AA871C17948D004FE039 /* Sources */,
+				C790AA881C17948D004FE039 /* Frameworks */,
+				C790AA891C17948D004FE039 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C790AA8D1C17948D004FE039 /* PBXTargetDependency */,
+			);
+			name = "Put It DownTests";
+			productName = "Put It DownTests";
+			productReference = C790AA8B1C17948D004FE039 /* Put It DownTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C790AA951C17948D004FE039 /* Put It DownUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C790AAA51C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It DownUITests" */;
+			buildPhases = (
+				C790AA921C17948D004FE039 /* Sources */,
+				C790AA931C17948D004FE039 /* Frameworks */,
+				C790AA941C17948D004FE039 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C790AA981C17948D004FE039 /* PBXTargetDependency */,
+			);
+			name = "Put It DownUITests";
+			productName = "Put It DownUITests";
+			productReference = C790AA961C17948D004FE039 /* Put It DownUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C790AA671C17948D004FE039 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Benjamin A Burgess";
+				TargetAttributes = {
+					C790AA6E1C17948D004FE039 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = TAH7A3M6JJ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					C790AA8A1C17948D004FE039 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = TAH7A3M6JJ;
+						TestTargetID = C790AA6E1C17948D004FE039;
+					};
+					C790AA951C17948D004FE039 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = TAH7A3M6JJ;
+						TestTargetID = C790AA6E1C17948D004FE039;
+					};
+				};
+			};
+			buildConfigurationList = C790AA6A1C17948D004FE039 /* Build configuration list for PBXProject "Put It Down" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C790AA661C17948D004FE039;
+			productRefGroup = C790AA701C17948D004FE039 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C790AA6E1C17948D004FE039 /* Put It Down */,
+				C790AA8A1C17948D004FE039 /* Put It DownTests */,
+				C790AA951C17948D004FE039 /* Put It DownUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C790AA6D1C17948D004FE039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C790AA851C17948D004FE039 /* LaunchScreen.storyboard in Resources */,
+				C790AA821C17948D004FE039 /* Assets.xcassets in Resources */,
+				C790AA801C17948D004FE039 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C790AA891C17948D004FE039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C790AA941C17948D004FE039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C790AA6B1C17948D004FE039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C790AA7D1C17948D004FE039 /* SecondViewController.m in Sources */,
+				C790AA771C17948D004FE039 /* AppDelegate.m in Sources */,
+				C790AA7A1C17948D004FE039 /* FirstViewController.m in Sources */,
+				C790AA741C17948D004FE039 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C790AA871C17948D004FE039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C790AA901C17948D004FE039 /* Put_It_DownTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C790AA921C17948D004FE039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C790AA9B1C17948D004FE039 /* Put_It_DownUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C790AA8D1C17948D004FE039 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C790AA6E1C17948D004FE039 /* Put It Down */;
+			targetProxy = C790AA8C1C17948D004FE039 /* PBXContainerItemProxy */;
+		};
+		C790AA981C17948D004FE039 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C790AA6E1C17948D004FE039 /* Put It Down */;
+			targetProxy = C790AA971C17948D004FE039 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C790AA7E1C17948D004FE039 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C790AA7F1C17948D004FE039 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C790AA831C17948D004FE039 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C790AA841C17948D004FE039 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C790AA9D1C17948D004FE039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C790AA9E1C17948D004FE039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C790AAA01C17948D004FE039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Put It Down/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-Down";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C790AAA11C17948D004FE039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Put It Down/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-Down";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C790AAA31C17948D004FE039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Put It DownTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-DownTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Put It Down.app/Put It Down";
+			};
+			name = Debug;
+		};
+		C790AAA41C17948D004FE039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Put It DownTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-DownTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Put It Down.app/Put It Down";
+			};
+			name = Release;
+		};
+		C790AAA61C17948D004FE039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Put It DownUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-DownUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Put It Down";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C790AAA71C17948D004FE039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Put It DownUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-DownUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Put It Down";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C790AA6A1C17948D004FE039 /* Build configuration list for PBXProject "Put It Down" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C790AA9D1C17948D004FE039 /* Debug */,
+				C790AA9E1C17948D004FE039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C790AA9F1C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It Down" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C790AAA01C17948D004FE039 /* Debug */,
+				C790AAA11C17948D004FE039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C790AAA21C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It DownTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C790AAA31C17948D004FE039 /* Debug */,
+				C790AAA41C17948D004FE039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C790AAA51C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It DownUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C790AAA61C17948D004FE039 /* Debug */,
+				C790AAA71C17948D004FE039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C790AA671C17948D004FE039 /* Project object */;
+}
