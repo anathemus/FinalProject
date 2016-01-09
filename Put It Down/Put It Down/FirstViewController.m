@@ -9,11 +9,13 @@
 #import "FirstViewController.h"
 #import <CoreLocation/CoreLocation.h>
 @import CoreLocation;
+#import <iAd/iAd.h>
 
 
 @interface FirstViewController () <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *driver;
 
+@property (weak, nonatomic) IBOutlet ADBannerView *bannerView1;
 @property NSTimer *t;
 
 // instantiates the location grabbed
@@ -27,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self createBannerView];
     // initialize locationManager
     locationManager = [[CLLocationManager alloc]init];
     // delegate locationManager to self
@@ -47,9 +50,36 @@
     [locationManager stopUpdatingLocation];
     
     }
+// creates the view for the ad banner
+- (void)createBannerView {
+    
+    Class cls = NSClassFromString(@"ADBannerView");
+    if (cls) {
+        ADBannerView *adView = [[cls alloc] initWithFrame:CGRectZero];
+        
+        
+        // Set the current size based on device orientation
+        adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+        adView.delegate = self;
+        
+        adView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
+        UIViewAutoresizingFlexibleRightMargin;
+        
+        // Set initial frame to be offscreen
+        CGRect bannerFrame =adView.frame;
+        bannerFrame.origin.y = self.view.frame.size.height;
+        adView.frame = bannerFrame;
+        
+        self.bannerView1 = adView;
+        [self.view addSubview:adView];
+        
+    }
+}
 
-
-
+//this is the working method; note the method name
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    NSLog(@"banner failed to receive ad with error:%@", error);
+}
 
 
 // Location Manager Delegate Methods

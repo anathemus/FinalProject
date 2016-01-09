@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C73751E51C4092D600555433 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73751E41C4092D600555433 /* iAd.framework */; };
 		C790AA741C17948D004FE039 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA731C17948D004FE039 /* main.m */; };
 		C790AA771C17948D004FE039 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA761C17948D004FE039 /* AppDelegate.m */; };
 		C790AA7A1C17948D004FE039 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA791C17948D004FE039 /* FirstViewController.m */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C73751E41C4092D600555433 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		C790AA6F1C17948D004FE039 /* Put It Down.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Put It Down.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C790AA731C17948D004FE039 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C790AA751C17948D004FE039 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C73751E51C4092D600555433 /* iAd.framework in Frameworks */,
 				C790AAA91C179506004FE039 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +90,7 @@
 		C790AA661C17948D004FE039 = {
 			isa = PBXGroup;
 			children = (
+				C73751E41C4092D600555433 /* iAd.framework */,
 				C790AAA81C179506004FE039 /* CoreLocation.framework */,
 				C790AA711C17948D004FE039 /* Put It Down */,
 				C790AA8E1C17948D004FE039 /* Put It DownTests */,
@@ -514,6 +518,7 @@
 				C790AAA11C17948D004FE039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C790AAA21C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It DownTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				C790AAA41C17948D004FE039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C790AAA51C17948D004FE039 /* Build configuration list for PBXNativeTarget "Put It DownUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				C790AAA71C17948D004FE039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

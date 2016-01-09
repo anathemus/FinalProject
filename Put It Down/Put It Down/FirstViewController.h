@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <iAd/iAd.h>
 
 CLLocationManager *locationManager;
 
-@interface FirstViewController : UIViewController
+
+
+@interface FirstViewController : UIViewController<ADBannerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *speed;
 

@@ -17,41 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="isv-9n-R4h">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="isv-9n-R4h">
                                 <rect key="frame" x="276" y="83" width="51" height="31"/>
                                 <connections>
                                     <action selector="driverSwitched:" destination="9pv-A4-QxB" eventType="valueChanged" id="FEZ-ug-pgI"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJB-GL-6E9">
-                                <rect key="frame" x="274" y="214" width="52" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJB-GL-6E9">
+                                <rect key="frame" x="275" y="214" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-pT-Pox">
-                                <rect key="frame" x="260" y="243" width="81" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-pT-Pox">
+                                <rect key="frame" x="288" y="243" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="58" width="195" height="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                                <rect key="frame" x="260" y="58" width="80" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="FmI-1N-jvg">
+                                <rect key="frame" x="60" y="477" width="480" height="32"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="0.2196078431372549" green="0.69019607843137254" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wJB-GL-6E9" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8vS-ts-ZbA"/>
+                            <constraint firstItem="wJB-GL-6E9" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-75.5" id="KD7-VD-0te"/>
                             <constraint firstItem="isv-9n-R4h" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="PhK-eS-rnv"/>
+                            <constraint firstItem="isv-9n-R4h" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-201.5" id="TMj-mx-DSM"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Xiq-Vk-cUG"/>
                             <constraint firstItem="ibr-pT-Pox" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="d8L-Qp-P40"/>
+                            <constraint firstItem="ibr-pT-Pox" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-46.5" id="jES-BT-XC4"/>
+                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-233.5" id="o91-EU-0e5"/>
+                            <constraint firstItem="FmI-1N-jvg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="vpF-tI-ncc"/>
+                            <constraint firstItem="FmI-1N-jvg" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="210" id="w7M-u0-9aG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Driver" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="bannerView1" destination="FmI-1N-jvg" id="y7y-eV-199"/>
                         <outlet property="driver" destination="isv-9n-R4h" id="Mxg-tO-WFS"/>
                         <outlet property="speed" destination="ibr-pT-Pox" id="rWH-32-Dsq"/>
                     </connections>
@@ -72,21 +82,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4o-Bg-HLK">
-                                <rect key="frame" x="260" y="28" width="80" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4o-Bg-HLK">
+                                <rect key="frame" x="268" y="39" width="65" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-Ln-Z8O">
                                 <rect key="frame" x="64" y="86" width="473" height="398"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="BmR-im-icz">
+                                <rect key="frame" x="60" y="477" width="480" height="66"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.69019607839999997" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="BmR-im-icz" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="210" id="ehB-Wl-PMg"/>
+                            <constraint firstItem="BmR-im-icz" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="hCu-PG-P5r"/>
                             <constraint firstItem="A4o-Bg-HLK" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-247" id="l8i-ZL-rYl"/>
                             <constraint firstItem="A4o-Bg-HLK" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="ybU-IL-8nI"/>
                         </constraints>
@@ -94,6 +109,7 @@
                     <tabBarItem key="tabBarItem" title="About" image="first" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="about" destination="m5a-Ln-Z8O" id="ztk-gd-Mxm"/>
+                        <outlet property="bannerView2" destination="BmR-im-icz" id="KUs-sx-4EN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
