@@ -20,14 +20,19 @@
 
 // instantiates the location grabbed
 @property (strong, nonatomic) CLLocation *location;
+@property (weak, nonatomic) IBOutlet UITextField *customText;
 
 @end
 
 @implementation FirstViewController
 
+NSString *customNotification = @"Your screen's contents are not worth your life.";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
     
     [self createBannerView];
     // initialize locationManager
@@ -89,8 +94,16 @@
     
     _location = [locations lastObject];
     
-    // store the phone's speed as Miles Per Hour
-    _mph = ((self.location.speed) * 2.23694);
+    // store the phone's speed as Miles Per Hour, correct for 0 MPH
+    if (((self.location.speed)*2.23694) <= 0){
+        _mph = 0;
+    }
+    
+    else {
+        _mph = ((self.location.speed) * 2.23694);
+    }
+    
+    
     _speed.text =  [NSString stringWithFormat:@"%.1f mph", _mph];
     }
 // sends the alerts to the phone when speed is over 10 mph after 5 second delay.
@@ -105,7 +118,7 @@
     if ([UIAlertController class])
     {
       // if app is in foreground, send alerts (iOS version checking)
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Put it down" message:@"Your screen's contents are not worth your life." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Put it down" message:customNotification preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:ok];
@@ -117,7 +130,7 @@
     else
     {
         
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Put it down" message:@"Your screen's contents are not worth your life." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Put it down" message:customNotification delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         
         [alert show];
         // wait 5 seconds before displaying another alert.
@@ -125,15 +138,17 @@
         
     }
     
-    // If app is in the background, send local notifications
+    // If app is in the background, send local notifications, canceling/deleting the last one sent before sending another one to ensure notifications screen is tidy.
     UILocalNotification* localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-    localNotification.alertBody = @"Your screen's contents are not worth your life.";
+    localNotification.alertBody = customNotification;
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-
     }
 
+}
+- (IBAction)textEntered:(UITextField *)sender {
+    customNotification = _customText.text;
 }
 
 - (IBAction)driverSwitched:(UISwitch *)sender {

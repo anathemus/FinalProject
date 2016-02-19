@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C73751E51C4092D600555433 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73751E41C4092D600555433 /* iAd.framework */; };
+		C7698CE21C4989E600CE0C3C /* PIDwheel58.png in Resources */ = {isa = PBXBuildFile; fileRef = C7698CE11C4989E600CE0C3C /* PIDwheel58.png */; };
+		C7698CE41C498A3900CE0C3C /* PIDwheel87.png in Resources */ = {isa = PBXBuildFile; fileRef = C7698CE31C498A3900CE0C3C /* PIDwheel87.png */; };
+		C7698CE61C498AA600CE0C3C /* PIDwheel180.png in Resources */ = {isa = PBXBuildFile; fileRef = C7698CE51C498AA600CE0C3C /* PIDwheel180.png */; };
+		C7698CE81C498ADE00CE0C3C /* PIDwheel120.png in Resources */ = {isa = PBXBuildFile; fileRef = C7698CE71C498ADE00CE0C3C /* PIDwheel120.png */; };
 		C790AA741C17948D004FE039 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA731C17948D004FE039 /* main.m */; };
 		C790AA771C17948D004FE039 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA761C17948D004FE039 /* AppDelegate.m */; };
 		C790AA7A1C17948D004FE039 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA791C17948D004FE039 /* FirstViewController.m */; };
@@ -39,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		C73751E41C4092D600555433 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		C7698CE11C4989E600CE0C3C /* PIDwheel58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIDwheel58.png; sourceTree = "<group>"; };
+		C7698CE31C498A3900CE0C3C /* PIDwheel87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIDwheel87.png; sourceTree = "<group>"; };
+		C7698CE51C498AA600CE0C3C /* PIDwheel180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIDwheel180.png; sourceTree = "<group>"; };
+		C7698CE71C498ADE00CE0C3C /* PIDwheel120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIDwheel120.png; sourceTree = "<group>"; };
 		C790AA6F1C17948D004FE039 /* Put It Down.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Put It Down.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C790AA731C17948D004FE039 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C790AA751C17948D004FE039 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 		C790AA721C17948D004FE039 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7698CE71C498ADE00CE0C3C /* PIDwheel120.png */,
+				C7698CE51C498AA600CE0C3C /* PIDwheel180.png */,
+				C7698CE31C498A3900CE0C3C /* PIDwheel87.png */,
+				C7698CE11C4989E600CE0C3C /* PIDwheel58.png */,
 				C790AA731C17948D004FE039 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -220,7 +232,7 @@
 				TargetAttributes = {
 					C790AA6E1C17948D004FE039 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = TAH7A3M6JJ;
+						DevelopmentTeam = PABBGTECU6;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -264,9 +276,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7698CE81C498ADE00CE0C3C /* PIDwheel120.png in Resources */,
+				C7698CE21C4989E600CE0C3C /* PIDwheel58.png in Resources */,
 				C790AA851C17948D004FE039 /* LaunchScreen.storyboard in Resources */,
 				C790AA821C17948D004FE039 /* Assets.xcassets in Resources */,
 				C790AA801C17948D004FE039 /* Main.storyboard in Resources */,
+				C7698CE41C498A3900CE0C3C /* PIDwheel87.png in Resources */,
+				C7698CE61C498AA600CE0C3C /* PIDwheel180.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,10 +449,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Put It Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-Down";
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminaburgess.PutItDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,10 +462,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Put It Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "benjaminaburgess.Put-It-Down";
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminaburgess.PutItDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
