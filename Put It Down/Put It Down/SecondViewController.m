@@ -7,12 +7,13 @@
 //
 
 #import "SecondViewController.h"
-#import <iAd/iAd.h>
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
 
 @interface SecondViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *about;
-@property (weak, nonatomic) IBOutlet ADBannerView *bannerView2;
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView2;
+
 
 
 @end
@@ -29,34 +30,12 @@
 // creates the view for the ad banner
 - (void)createBannerView {
     
-    Class cls = NSClassFromString(@"ADBannerView");
-    if (cls) {
-        ADBannerView *adView = [[cls alloc] initWithFrame:CGRectZero];
-        
-        
-        // Set the current size based on device orientation
-        adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
-        adView.delegate = self;
-        
-        adView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
-        UIViewAutoresizingFlexibleRightMargin;
-        
-        // Set initial frame to be offscreen
-        CGRect bannerFrame =adView.frame;
-        bannerFrame.origin.y = self.view.frame.size.height;
-        adView.frame = bannerFrame;
-        
-        self.bannerView2 = adView;
-        [self.view addSubview:adView];
-        
-    }
+    // Creates Google ADMOB banner
+    
+    self.bannerView2.adUnitID = @"ca-app-pub-7531252031513293/2655042967";
+    self.bannerView2.rootViewController = self;
+    [self.bannerView2 loadRequest:[GADRequest request]];
 }
-
-//this is the working method; note the method name
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"banner failed to receive ad with error:%@", error);
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

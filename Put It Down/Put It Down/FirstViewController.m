@@ -9,13 +9,16 @@
 #import "FirstViewController.h"
 #import <CoreLocation/CoreLocation.h>
 @import CoreLocation;
-#import <iAd/iAd.h>
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
+// Important: Conversion of meters to miles. Location outputs in meters.
+
+#define METERS_PER_MILE 1609.344
 
 @interface FirstViewController () <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *driver;
 
-@property (weak, nonatomic) IBOutlet ADBannerView *bannerView1;
+
 @property NSTimer *t;
 
 // instantiates the location grabbed
@@ -26,6 +29,9 @@
 
 @implementation FirstViewController
 
+// CoreData access
+@synthesize fetchedResultsController, managedObjectContext;
+
 NSString *customNotification = @"Your screen's contents are not worth your life.";
 
 - (void)viewDidLoad {
@@ -34,7 +40,9 @@ NSString *customNotification = @"Your screen's contents are not worth your life.
     
     
     
-    [self createBannerView];
+    _mapView.delegate = self;
+    // Create the ad banner
+    [self createAdBanner];
     // initialize locationManager
     locationManager = [[CLLocationManager alloc]init];
     // delegate locationManager to self
@@ -55,37 +63,23 @@ NSString *customNotification = @"Your screen's contents are not worth your life.
     [locationManager stopUpdatingLocation];
     
     }
-// creates the view for the ad banner
-- (void)createBannerView {
+- (void)createAdBanner
+{
+    // Creates Google ADMOB banner
     
-    Class cls = NSClassFromString(@"ADBannerView");
-    if (cls) {
-        ADBannerView *adView = [[cls alloc] initWithFrame:CGRectZero];
-        
-        
-        // Set the current size based on device orientation
-        adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
-        adView.delegate = self;
-        
-        adView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
-        UIViewAutoresizingFlexibleRightMargin;
-        
-        // Set initial frame to be offscreen
-        CGRect bannerFrame =adView.frame;
-        bannerFrame.origin.y = self.view.frame.size.height;
-        adView.frame = bannerFrame;
-        
-        self.bannerView1 = adView;
-        [self.view addSubview:adView];
-        
-    }
+    self.bannerView1.adUnitID = @"ca-app-pub-7531252031513293/2655042967";
+    self.bannerView1.rootViewController = self;
+    [self.bannerView1 loadRequest:[GADRequest request]];
+    
 }
 
-//this is the working method; note the method name
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"banner failed to receive ad with error:%@", error);
+// Zooms into where the user's location is on the map.
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = _mapView.userLocation.coordinate;
+    mapRegion.span = MKCoordinateSpanMake(0.1, 0.1);
+    [_mapView setRegion:mapRegion animated: YES];
 }
-
 
 // Location Manager Delegate Methods
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations: (NSArray *)locations
@@ -95,7 +89,7 @@ NSString *customNotification = @"Your screen's contents are not worth your life.
     _location = [locations lastObject];
     
     // store the phone's speed as Miles Per Hour, correct for 0 MPH
-    if (((self.location.speed)*2.23694) <= 0){
+    if (((self.location.speed)*2.23694) <= 0 || !_location){
         _mph = 0;
     }
     
@@ -150,23 +144,37 @@ NSString *customNotification = @"Your screen's contents are not worth your life.
 - (IBAction)textEntered:(UITextField *)sender {
     customNotification = _customText.text;
 }
+- (IBAction)textEdited:(id)sender
+{
+    customNotification = _customText.text;
+}
 
-- (IBAction)driverSwitched:(UISwitch *)sender {
-    if(_driver.isOn){
-        [locationManager startUpdatingLocation];
-        // speed check. if over 10 mph and phone unlocked (checked by brightness) then, send alerts for the user to put it down or lock the phone. Note the TimeInterval. Sends alerts every 5 seconds.
+- (IBAction)driverSwitched:(UISwitch *)sender
+{
+    if(_driver.isOn)
+    {
         
-        [NSTimer scheduledTimerWithTimeInterval:5.0
+        [locationManager startUpdatingLocation];
+        
+        // After a delay to update the location, put down the start pin.
+        [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(getStart) userInfo:nil repeats:NO];
+        
+        // speed check. if over 10 mph and phone unlocked (checked by brightness) then, send alerts for the user to put it down or lock the phone. Note the TimeInterval. Sends alerts every 5 seconds.
+        [NSTimer scheduledTimerWithTimeInterval:7.0
                                          target:self
                                        selector:@selector(sendAlerts:)
                                        userInfo:nil
                                         repeats:YES];
-        
-
-    } else {
+    }
+    else
+    {
+        // Grab last place in route. Must be before stopUpdatingLocation.
+        _endPoint = self.location.coordinate;
+        [self annotateEnd];
         [locationManager stopUpdatingLocation];
         _speed.text = [NSString stringWithFormat:@"Off"];
         _mph = 0;
+        
     }
     
 }
@@ -177,6 +185,33 @@ NSString *customNotification = @"Your screen's contents are not worth your life.
     NSLog(@"didFinishDeferredUpdatesWithError");
     
 }
+
+- (void)getStart
+{
+    // Grab initial location
+    _startPoint = self.location.coordinate;
+    // calls annotateStart function
+    [self annotateStart];
+}
+
+- (void)annotateStart
+{
+    MKPointAnnotation *startAnnotation = [[MKPointAnnotation alloc] init];
+    startAnnotation.coordinate = _startPoint;
+    startAnnotation.title = @"Start";
+    startAnnotation.subtitle = @"You started your route here.";
+    [self.mapView addAnnotation:startAnnotation];
+}
+
+- (void)annotateEnd
+{
+    MKPointAnnotation *endAnnotation = [[MKPointAnnotation alloc] init];
+    endAnnotation.coordinate = _endPoint;
+    endAnnotation.title = @"Finish";
+    endAnnotation.subtitle = @"Your route ended here.";
+    [self.mapView addAnnotation:endAnnotation];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
