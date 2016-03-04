@@ -15,6 +15,8 @@
 
 #define METERS_PER_MILE 1609.344
 
+CLLocationManager *locationManager;
+
 @interface FirstViewController () <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *driver;
 
@@ -29,7 +31,6 @@
 
 @implementation FirstViewController
 
-// CoreData access
 @synthesize fetchedResultsController, managedObjectContext;
 
 NSString *customNotification = @"Your screen's contents are not worth your life.";

@@ -10,9 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import <CoreData/CoreData.h>
-#import "AppDelegate.h"
 
-CLLocationManager *locationManager;
+
 
 @class GADBannerView;
 
@@ -33,7 +32,6 @@ CLLocationManager *locationManager;
 @property (nonatomic) CLLocationCoordinate2D endPoint;
 ;
 
-// CoreData access
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
