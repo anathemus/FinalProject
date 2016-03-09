@@ -8,14 +8,36 @@
 
 #import "HomeViewController.h"
 #import "NewDriveViewController.h"
+#import "BadgesTableViewController.h"
+#import "BadgeController.h"
+#import "PastDrivesViewController.h"
 
 @interface HomeViewController ()
+
+@property (strong, nonatomic) NSArray *driveArray;
 
 @end
 
 @implementation HomeViewController
 
 @synthesize managedObjectContext;
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Gets CoreData every time you go to the home screen
+    [super viewWillAppear:animated];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Drive" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    self.driveArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,12 +47,15 @@
 
 - (void)createAdBanner
 {
+    
     // Creates Google ADMOB banner
     
     self.bannerView1.adUnitID = @"ca-app-pub-7531252031513293/2655042967";
     self.bannerView1.rootViewController = self;
-    [self.bannerView1 loadRequest:[GADRequest request]];
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ @"b03ba6b32502bab9a8cabc47c31701ba" ];
     
+    [self.bannerView1 loadRequest:request];
 }
 
 
@@ -46,9 +71,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *nextController = [segue destinationViewController];
-    if ([nextController isKindOfClass:[NewDriveViewController class]]) {
+    if ([nextController isKindOfClass:[NewDriveViewController class]])
+    {
         ((NewDriveViewController *) nextController).managedObjectContext = self.managedObjectContext;
     }
+    else if ([nextController isKindOfClass:[BadgesTableViewController class]])
+    {
+        ((BadgesTableViewController *) nextController).earnStatusArray = [[BadgeController defaultController] earnStatusesForDrives:self.driveArray];
+    }
+    else if ([nextController isKindOfClass:[PastDrivesViewController class]])
+    {
+        ((PastDrivesViewController *) nextController).managedObjectContext = self.managedObjectContext;
+    }
 }
-
 @end

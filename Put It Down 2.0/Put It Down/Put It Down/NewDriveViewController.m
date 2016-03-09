@@ -13,6 +13,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "MathController.h"
 #import "Location.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "PinAnnotation.h"
 
 
 static NSString * const detailSegueName = @"DriveDetails";
@@ -29,6 +31,7 @@ static NSString * const detailSegueName = @"DriveDetails";
 @property (nonatomic, weak) IBOutlet UILabel *pickupLabel;
 @property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *screenTouch;
 
 // Variables to hold the timer, location, and number of times picked up
 @property int seconds;
@@ -41,6 +44,10 @@ static NSString * const detailSegueName = @"DriveDetails";
 // instantiates the location grabbed
 @property (strong, nonatomic) CLLocation *location;
 - (IBAction)Pickup:(id)sender;
+
+// sets up array of pins so they can be stored and saved.
+@property (strong, nonatomic) NSMutableArray *annotations;
+@property (strong, nonatomic) PinAnnotation *annotation;
 
 @end
 
@@ -88,17 +95,22 @@ static NSString * const detailSegueName = @"DriveDetails";
     // delegates the mapView so it can zoom in
     _driveMapView.delegate = self;
     
-
+    // initiate annotations array and PinAnnotations
+    _annotations = [NSMutableArray array];
+    _annotation = [[PinAnnotation alloc]init];
 }
 
 - (void)createAdBanner
 {
+    
     // Creates Google ADMOB banner
     
     self.bannerView2.adUnitID = @"ca-app-pub-7531252031513293/2655042967";
     self.bannerView2.rootViewController = self;
-    [self.bannerView2 loadRequest:[GADRequest request]];
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ @"b03ba6b32502bab9a8cabc47c31701ba" ];
     
+    [self.bannerView2 loadRequest:request];
 }
 
 
@@ -125,15 +137,12 @@ static NSString * const detailSegueName = @"DriveDetails";
     [self startLocationUpdates];
     
     // After a delay to update the location, put down the start pin.
-    [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(getStart) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(getStart) userInfo:nil repeats:NO];
 
 }
 
 - (IBAction)stopPressed:(id)sender
 {
-    // minus 1 pick up because the stop button doesn't count.
-    _pickups--;
-    
     _endPoint = self.location.coordinate;
     [self annotateEnd];
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self
@@ -265,6 +274,9 @@ static NSString * const detailSegueName = @"DriveDetails";
     startAnnotation.title = @"Start";
     startAnnotation.subtitle = @"You started your route here.";
     [self.driveMapView addAnnotation:startAnnotation];
+    
+    // save the start point in the annotations array
+    [self.annotations addObject:startAnnotation];
 }
 
 // Pins end point on the map
@@ -275,6 +287,7 @@ static NSString * const detailSegueName = @"DriveDetails";
     endAnnotation.title = @"Finish";
     endAnnotation.subtitle = @"Your route ended here.";
     [self.driveMapView addAnnotation:endAnnotation];
+    [self.annotations addObject:endAnnotation];
 }
 
 - (IBAction)Pickup:(id)sender
@@ -285,15 +298,21 @@ static NSString * const detailSegueName = @"DriveDetails";
     pickupAnnotation.title = @"Picked up";
     pickupAnnotation.subtitle = @"You touched your phone here.";
     [self.driveMapView addAnnotation:pickupAnnotation];
+    [self playNoTouchieSound];
+    [self.annotations addObject:pickupAnnotation];
+    
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+- (void)playNoTouchieSound
+{
+    NSString *path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/Alarm.wav"];
+    SystemSoundID soundID;
+    NSURL *filePath = [NSURL fileURLWithPath:path isDirectory:NO];
+    AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(filePath), &soundID);
+    AudioServicesPlaySystemSound(soundID);
     
-    // Disallow recognition of tap gestures in the segmented control.
-    if ((touch.view == _stopButton)) {//change it to your condition
-        return NO;
-    }
-    return YES;
+    //also vibrate
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
 
@@ -342,6 +361,26 @@ static NSString * const detailSegueName = @"DriveDetails";
     }
     return nil;
 }
+
+// save the pins for the other screens
+- (NSArray *)annotationsForDrive:(Drive *)drive
+{
+    
+    
+    return _annotations;
+}
+
++ (NewDriveViewController *)newDriveViewController
+{
+    static NewDriveViewController *controller = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        controller = [[NewDriveViewController alloc] init];
+    });
+    
+    return controller;
+}
+
 
 /*
 #pragma mark - Navigation

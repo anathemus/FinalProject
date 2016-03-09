@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+extern float const silverMultiplier;
+extern float const goldMultiplier;
+
 @interface BadgeController : NSObject
 
 + (BadgeController *)defaultController;
+
+- (NSArray *)earnStatusesForDrives:(NSArray *)drivesArray;
+
 
 @end

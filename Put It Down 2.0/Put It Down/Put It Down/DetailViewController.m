@@ -9,6 +9,10 @@
 #import "DetailViewController.h"
 #import <MapKit/MapKit.h>
 #import "MulticolorPolylineSegment.h"
+#import "HomeViewController.h"
+#import "Badge.h"
+#import "PinAnnotation.h"
+#include "NewDriveViewController.h"
 
 @interface DetailViewController () <MKMapViewDelegate>
 
@@ -144,7 +148,10 @@
         
         // make the line(s!) on the map
         NSArray *colorSegmentArray = [MathController colorSegmentsForLocations:self.drive.location.array];
-        [self.mapView addOverlays:colorSegmentArray];;
+        [self.mapView addOverlays:colorSegmentArray];
+        
+        // add the pins back to the map
+        [self.mapView addAnnotations:[[NewDriveViewController newDriveViewController] annotationsForDrive:self.drive]];
         
     } else {
         
@@ -159,6 +166,19 @@
                                   otherButtonTitles:nil];
         [alertView show];
     }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
+{
+    
+    MKAnnotationView *annView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"checkpoint"];
+    if (!annView) {
+        annView=[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"checkpoint"];
+        annView.image = [UIImage imageNamed:@"mapPin"];
+        annView.canShowCallout = YES;
+    }
+    
+    return annView;
 }
 
 - (void)didReceiveMemoryWarning {

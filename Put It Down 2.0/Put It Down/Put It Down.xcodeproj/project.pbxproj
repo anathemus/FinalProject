@@ -10,6 +10,7 @@
 		C707F45A1C8A6839007641BD /* MulticolorPolylineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = C707F4591C8A6839007641BD /* MulticolorPolylineSegment.m */; };
 		C707F45D1C8A80AD007641BD /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = C707F45C1C8A80AD007641BD /* Badge.m */; };
 		C707F4601C8A8193007641BD /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C707F45F1C8A8193007641BD /* BadgeController.m */; };
+		C71FEB051C8BDA9500B73DCE /* BadgeEarnStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C71FEB041C8BDA9500B73DCE /* BadgeEarnStatus.m */; };
 		C73F62A21C88D2D900B7EAC9 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73F62A11C88D2D900B7EAC9 /* GoogleMobileAds.framework */; };
 		C73F62A41C88D2E900B7EAC9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73F62A31C88D2E900B7EAC9 /* CoreData.framework */; };
 		C73F62AD1C88D4B300B7EAC9 /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F62A61C88D4B300B7EAC9 /* Location+CoreDataProperties.m */; };
@@ -63,11 +64,16 @@
 		C73F630B1C88DAF800B7EAC9 /* triton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C73F62E01C88DAF800B7EAC9 /* triton.jpg */; };
 		C73F630C1C88DAF800B7EAC9 /* umbriel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C73F62E11C88DAF800B7EAC9 /* umbriel.jpg */; };
 		C73F630F1C88E6CE00B7EAC9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F630E1C88E6CE00B7EAC9 /* HomeViewController.m */; };
+		C755DDB31C8F17DF0047537B /* BadgeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C755DDB21C8F17DF0047537B /* BadgeDetailsViewController.m */; };
+		C755DDB51C8F2B1C0047537B /* Alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = C755DDB41C8F2B1C0047537B /* Alarm.wav */; };
+		C755DDB81C8F43980047537B /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C755DDB71C8F43980047537B /* PinAnnotation.m */; };
+		C755DDBB1C8F573F0047537B /* PastDrivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C755DDBA1C8F573F0047537B /* PastDrivesViewController.m */; };
+		C755DDBE1C8F59190047537B /* DriveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C755DDBD1C8F59190047537B /* DriveCell.m */; };
+		C755DDC01C8F5E660047537B /* GPS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C755DDBF1C8F5E660047537B /* GPS.jpg */; };
 		C794EA091C892A88003BC9AD /* NewDriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C794EA081C892A88003BC9AD /* NewDriveViewController.m */; };
 		C7BBF41F1C88C29400E7ED69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BBF41E1C88C29400E7ED69 /* main.m */; };
 		C7BBF4221C88C29400E7ED69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BBF4211C88C29400E7ED69 /* AppDelegate.m */; };
 		C7BBF4251C88C29400E7ED69 /* Put_It_Down.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7BBF4231C88C29400E7ED69 /* Put_It_Down.xcdatamodeld */; };
-		C7BBF4281C88C29400E7ED69 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BBF4271C88C29400E7ED69 /* MasterViewController.m */; };
 		C7BBF42B1C88C29400E7ED69 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BBF42A1C88C29400E7ED69 /* DetailViewController.m */; };
 		C7BBF42E1C88C29400E7ED69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BBF42C1C88C29400E7ED69 /* Main.storyboard */; };
 		C7BBF4301C88C29400E7ED69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BBF42F1C88C29400E7ED69 /* Assets.xcassets */; };
@@ -76,6 +82,8 @@
 		C7BBF4491C88C29400E7ED69 /* Put_It_DownUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BBF4481C88C29400E7ED69 /* Put_It_DownUITests.m */; };
 		C7C19EFC1C89F21900D5863F /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C19EFB1C89F21900D5863F /* MathController.m */; };
 		C7C19EFE1C89FF6500D5863F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C19EFD1C89FF6500D5863F /* CoreLocation.framework */; };
+		C7C80BD61C8DED05002601B7 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C80BD51C8DED05002601B7 /* BadgeCell.m */; };
+		C7C80BD91C8DEE14002601B7 /* BadgesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C80BD81C8DEE14002601B7 /* BadgesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +110,8 @@
 		C707F45C1C8A80AD007641BD /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badge.m; sourceTree = "<group>"; };
 		C707F45E1C8A8193007641BD /* BadgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeController.h; sourceTree = "<group>"; };
 		C707F45F1C8A8193007641BD /* BadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeController.m; sourceTree = "<group>"; };
+		C71FEB031C8BDA9500B73DCE /* BadgeEarnStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeEarnStatus.h; sourceTree = "<group>"; };
+		C71FEB041C8BDA9500B73DCE /* BadgeEarnStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeEarnStatus.m; sourceTree = "<group>"; };
 		C73F62A11C88D2D900B7EAC9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../../GoogleMobileAdsSdkiOS-7.6.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		C73F62A31C88D2E900B7EAC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C73F62A51C88D4B300B7EAC9 /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -160,6 +170,16 @@
 		C73F62E11C88DAF800B7EAC9 /* umbriel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbriel.jpg; sourceTree = "<group>"; };
 		C73F630D1C88E6CE00B7EAC9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C73F630E1C88E6CE00B7EAC9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C755DDB11C8F17DF0047537B /* BadgeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeDetailsViewController.h; sourceTree = "<group>"; };
+		C755DDB21C8F17DF0047537B /* BadgeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeDetailsViewController.m; sourceTree = "<group>"; };
+		C755DDB41C8F2B1C0047537B /* Alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Alarm.wav; path = ../../../../../Downloads/Alarm.wav; sourceTree = "<group>"; };
+		C755DDB61C8F43980047537B /* PinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinAnnotation.h; sourceTree = "<group>"; };
+		C755DDB71C8F43980047537B /* PinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinAnnotation.m; sourceTree = "<group>"; };
+		C755DDB91C8F573F0047537B /* PastDrivesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastDrivesViewController.h; sourceTree = "<group>"; };
+		C755DDBA1C8F573F0047537B /* PastDrivesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastDrivesViewController.m; sourceTree = "<group>"; };
+		C755DDBC1C8F59190047537B /* DriveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveCell.h; sourceTree = "<group>"; };
+		C755DDBD1C8F59190047537B /* DriveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveCell.m; sourceTree = "<group>"; };
+		C755DDBF1C8F5E660047537B /* GPS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = GPS.jpg; path = "../../../../../Downloads/VectorCopy-GPS navigation icon/GPS.jpg"; sourceTree = "<group>"; };
 		C794EA071C892A88003BC9AD /* NewDriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDriveViewController.h; sourceTree = "<group>"; };
 		C794EA081C892A88003BC9AD /* NewDriveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDriveViewController.m; sourceTree = "<group>"; };
 		C7BBF41A1C88C29400E7ED69 /* Put It Down.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Put It Down.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,8 +187,6 @@
 		C7BBF4201C88C29400E7ED69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7BBF4211C88C29400E7ED69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C7BBF4241C88C29400E7ED69 /* Put_It_Down.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Put_It_Down.xcdatamodel; sourceTree = "<group>"; };
-		C7BBF4261C88C29400E7ED69 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		C7BBF4271C88C29400E7ED69 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		C7BBF4291C88C29400E7ED69 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C7BBF42A1C88C29400E7ED69 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C7BBF42D1C88C29400E7ED69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +202,10 @@
 		C7C19EFA1C89F21900D5863F /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
 		C7C19EFB1C89F21900D5863F /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
 		C7C19EFD1C89FF6500D5863F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C7C80BD41C8DED05002601B7 /* BadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeCell.h; sourceTree = "<group>"; };
+		C7C80BD51C8DED05002601B7 /* BadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
+		C7C80BD71C8DEE14002601B7 /* BadgesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesTableViewController.h; sourceTree = "<group>"; };
+		C7C80BD81C8DEE14002601B7 /* BadgesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,11 +270,17 @@
 			children = (
 				C7BBF4201C88C29400E7ED69 /* AppDelegate.h */,
 				C7BBF4211C88C29400E7ED69 /* AppDelegate.m */,
-				C7BBF4261C88C29400E7ED69 /* MasterViewController.h */,
-				C7BBF4271C88C29400E7ED69 /* MasterViewController.m */,
 				C7BBF4291C88C29400E7ED69 /* DetailViewController.h */,
 				C7BBF42A1C88C29400E7ED69 /* DetailViewController.m */,
+				C755DDB91C8F573F0047537B /* PastDrivesViewController.h */,
+				C755DDBA1C8F573F0047537B /* PastDrivesViewController.m */,
+				C755DDBC1C8F59190047537B /* DriveCell.h */,
+				C755DDBD1C8F59190047537B /* DriveCell.m */,
 				C7BBF42C1C88C29400E7ED69 /* Main.storyboard */,
+				C755DDB61C8F43980047537B /* PinAnnotation.h */,
+				C755DDB71C8F43980047537B /* PinAnnotation.m */,
+				C71FEB031C8BDA9500B73DCE /* BadgeEarnStatus.h */,
+				C71FEB041C8BDA9500B73DCE /* BadgeEarnStatus.m */,
 				C707F4581C8A6839007641BD /* MulticolorPolylineSegment.h */,
 				C707F4591C8A6839007641BD /* MulticolorPolylineSegment.m */,
 				C7C19EFA1C89F21900D5863F /* MathController.h */,
@@ -263,6 +291,12 @@
 				C707F45C1C8A80AD007641BD /* Badge.m */,
 				C707F45E1C8A8193007641BD /* BadgeController.h */,
 				C707F45F1C8A8193007641BD /* BadgeController.m */,
+				C7C80BD41C8DED05002601B7 /* BadgeCell.h */,
+				C7C80BD71C8DEE14002601B7 /* BadgesTableViewController.h */,
+				C7C80BD81C8DEE14002601B7 /* BadgesTableViewController.m */,
+				C755DDB11C8F17DF0047537B /* BadgeDetailsViewController.h */,
+				C755DDB21C8F17DF0047537B /* BadgeDetailsViewController.m */,
+				C7C80BD51C8DED05002601B7 /* BadgeCell.m */,
 				C73F630D1C88E6CE00B7EAC9 /* HomeViewController.h */,
 				C73F630E1C88E6CE00B7EAC9 /* HomeViewController.m */,
 				C7BBF42F1C88C29400E7ED69 /* Assets.xcassets */,
@@ -285,6 +319,7 @@
 		C7BBF41D1C88C29400E7ED69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C755DDBF1C8F5E660047537B /* GPS.jpg */,
 				C73F62B71C88DAF800B7EAC9 /* ariel.jpg */,
 				C73F62B81C88DAF800B7EAC9 /* asteroid_belt.png */,
 				C73F62B91C88DAF800B7EAC9 /* atmosphere.jpg */,
@@ -308,6 +343,7 @@
 				C73F62CB1C88DAF800B7EAC9 /* interstellar_space.jpg */,
 				C73F62CC1C88DAF800B7EAC9 /* io.jpg */,
 				C73F62CD1C88DAF800B7EAC9 /* kuiper_belt.png */,
+				C755DDB41C8F2B1C0047537B /* Alarm.wav */,
 				C73F62CE1C88DAF800B7EAC9 /* magnetotail.png */,
 				C73F62CF1C88DAF800B7EAC9 /* mapPin@2x.png */,
 				C73F62D01C88DAF800B7EAC9 /* mars.jpg */,
@@ -463,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C755DDC01C8F5E660047537B /* GPS.jpg in Resources */,
 				C73F62F71C88DAF800B7EAC9 /* io.jpg in Resources */,
 				C73F62E81C88DAF800B7EAC9 /* ceres.jpg in Resources */,
 				C73F63001C88DAF800B7EAC9 /* phobos.jpg in Resources */,
@@ -509,6 +546,7 @@
 				C73F62F81C88DAF800B7EAC9 /* kuiper_belt.png in Resources */,
 				C73F63041C88DAF800B7EAC9 /* saturn.jpg in Resources */,
 				C73F62F51C88DAF800B7EAC9 /* info@2x.png in Resources */,
+				C755DDB51C8F2B1C0047537B /* Alarm.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +571,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C755DDBE1C8F59190047537B /* DriveCell.m in Sources */,
+				C755DDB81C8F43980047537B /* PinAnnotation.m in Sources */,
+				C755DDB31C8F17DF0047537B /* BadgeDetailsViewController.m in Sources */,
+				C7C80BD61C8DED05002601B7 /* BadgeCell.m in Sources */,
 				C73F62B01C88D4B300B7EAC9 /* Drive.m in Sources */,
+				C755DDBB1C8F573F0047537B /* PastDrivesViewController.m in Sources */,
 				C794EA091C892A88003BC9AD /* NewDriveViewController.m in Sources */,
 				C73F62AD1C88D4B300B7EAC9 /* Location+CoreDataProperties.m in Sources */,
 				C73F62AE1C88D4B300B7EAC9 /* Location.m in Sources */,
@@ -542,9 +585,10 @@
 				C73F62AF1C88D4B300B7EAC9 /* Drive+CoreDataProperties.m in Sources */,
 				C707F4601C8A8193007641BD /* BadgeController.m in Sources */,
 				C707F45D1C8A80AD007641BD /* Badge.m in Sources */,
+				C71FEB051C8BDA9500B73DCE /* BadgeEarnStatus.m in Sources */,
 				C7BBF42B1C88C29400E7ED69 /* DetailViewController.m in Sources */,
 				C707F45A1C8A6839007641BD /* MulticolorPolylineSegment.m in Sources */,
-				C7BBF4281C88C29400E7ED69 /* MasterViewController.m in Sources */,
+				C7C80BD91C8DEE14002601B7 /* BadgesTableViewController.m in Sources */,
 				C7BBF4221C88C29400E7ED69 /* AppDelegate.m in Sources */,
 				C7BBF41F1C88C29400E7ED69 /* main.m in Sources */,
 				C7BBF4251C88C29400E7ED69 /* Put_It_Down.xcdatamodeld in Sources */,
