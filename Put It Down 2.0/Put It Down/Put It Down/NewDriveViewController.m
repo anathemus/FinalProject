@@ -14,7 +14,7 @@
 #import "MathController.h"
 #import "Location.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "PinAnnotation.h"
+#import "Pins.h"
 
 
 static NSString * const detailSegueName = @"DriveDetails";
@@ -47,7 +47,7 @@ static NSString * const detailSegueName = @"DriveDetails";
 
 // sets up array of pins so they can be stored and saved.
 @property (strong, nonatomic) NSMutableArray *annotations;
-@property (strong, nonatomic) PinAnnotation *annotation;
+
 
 @end
 
@@ -95,9 +95,9 @@ static NSString * const detailSegueName = @"DriveDetails";
     // delegates the mapView so it can zoom in
     _driveMapView.delegate = self;
     
-    // initiate annotations array and PinAnnotations
+    // initiate annotations array
     _annotations = [NSMutableArray array];
-    _annotation = [[PinAnnotation alloc]init];
+    
 }
 
 - (void)createAdBanner
@@ -292,7 +292,7 @@ static NSString * const detailSegueName = @"DriveDetails";
 
 - (IBAction)Pickup:(id)sender
 {
-    _pickups++;
+    self.pickups++;
     MKPointAnnotation *pickupAnnotation = [[MKPointAnnotation alloc] init];
     pickupAnnotation.coordinate = self.location.coordinate;
     pickupAnnotation.title = @"Picked up";
@@ -319,6 +319,7 @@ static NSString * const detailSegueName = @"DriveDetails";
 // Save the drive to CoreData
 - (void)saveDrive
 {
+    // adds the drive data to CoreData
     Drive *newDrive = [NSEntityDescription insertNewObjectForEntityForName:@"Drive"
                                                 inManagedObjectContext:self.managedObjectContext];
     
@@ -327,6 +328,7 @@ static NSString * const detailSegueName = @"DriveDetails";
     newDrive.timestamp = [NSDate date];
     newDrive.pickups = [NSNumber numberWithInt:self.pickups];
     
+    // adds all the locations (breadcrumb/trail) to CoreData
     NSMutableArray *locationArray = [NSMutableArray array];
     for (CLLocation *location in self.locations) {
         Location *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location"
@@ -338,6 +340,21 @@ static NSString * const detailSegueName = @"DriveDetails";
         [locationArray addObject:locationObject];
     }
     
+    // adds the pins to CoreData
+    NSMutableArray *pinArray = [NSMutableArray array];
+    for (MKPointAnnotation *annotation in self.annotations)
+    {
+    Pins *newPin = [NSEntityDescription insertNewObjectForEntityForName:@"Pins" inManagedObjectContext:self.managedObjectContext];
+        
+        newPin.latitude = [NSNumber numberWithDouble:annotation.coordinate.latitude];
+        newPin.longitude = [NSNumber numberWithDouble:annotation.coordinate.longitude];
+        newPin.title = annotation.title;
+        newPin.subtitle = annotation.subtitle;
+        [pinArray addObject:newPin];
+    
+    }
+    
+    newDrive.pins = [NSOrderedSet orderedSetWithArray:pinArray];
     newDrive.location = [NSOrderedSet orderedSetWithArray:locationArray];
     self.drive = newDrive;
     

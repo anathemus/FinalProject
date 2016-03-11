@@ -84,7 +84,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-I1-Vs2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-I1-Vs2">
                                 <rect key="frame" x="20" y="451" width="250" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="1q0-jL-iMY"/>
@@ -94,7 +94,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pick ups:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMB-sE-y9u">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick ups:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMB-sE-y9u">
                                 <rect key="frame" x="20" y="504" width="110" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KRH-6Q-JYO"/>
@@ -107,10 +107,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="z2d-I1-Vs2" firstAttribute="centerX" secondItem="GMB-sE-y9u" secondAttribute="centerX" id="9h7-h2-9H1"/>
+                            <constraint firstItem="z2d-I1-Vs2" firstAttribute="centerX" secondItem="GMB-sE-y9u" secondAttribute="centerX" constant="70" id="9h7-h2-9H1"/>
                             <constraint firstItem="5bs-jA-tsU" firstAttribute="top" secondItem="KAd-SI-Ydo" secondAttribute="bottom" constant="52" id="BUh-Nu-4NL"/>
                             <constraint firstItem="z2d-I1-Vs2" firstAttribute="leading" secondItem="D2p-Tg-0Ag" secondAttribute="leadingMargin" id="I4w-Vs-e3E"/>
-                            <constraint firstItem="z2d-I1-Vs2" firstAttribute="top" secondItem="KAd-SI-Ydo" secondAttribute="bottom" constant="431" id="RJB-cm-uWa"/>
+                            <constraint firstItem="z2d-I1-Vs2" firstAttribute="top" secondItem="KAd-SI-Ydo" secondAttribute="bottom" constant="451" id="RJB-cm-uWa"/>
                             <constraint firstItem="5bs-jA-tsU" firstAttribute="centerX" secondItem="D2p-Tg-0Ag" secondAttribute="centerX" id="Ror-c3-Ekz"/>
                             <constraint firstItem="P8N-yI-Ohn" firstAttribute="centerX" secondItem="D2p-Tg-0Ag" secondAttribute="centerX" id="d75-ej-SSY"/>
                             <constraint firstItem="yqZ-oM-Bbq" firstAttribute="centerX" secondItem="D2p-Tg-0Ag" secondAttribute="centerX" id="diC-5v-dUA"/>
@@ -477,7 +477,7 @@
         <scene sceneID="qVG-1O-wcu">
             <objects>
                 <tableViewController id="79w-E0-0QG" customClass="PastDrivesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KbD-2p-gnJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="KbD-2p-gnJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

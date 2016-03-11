@@ -1,5 +1,5 @@
 //
-//  Drive.h
+//  Pins.h
 //  Put It Down
 //
 //  Created by Benjamin A Burgess on 3/9/16.
@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Location, Pins;
+@class Drive;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Drive : NSManagedObject
+@interface Pins : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -21,4 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Drive+CoreDataProperties.h"
+#import "Pins+CoreDataProperties.h"

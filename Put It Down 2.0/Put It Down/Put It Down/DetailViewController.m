@@ -11,7 +11,6 @@
 #import "MulticolorPolylineSegment.h"
 #import "HomeViewController.h"
 #import "Badge.h"
-#import "PinAnnotation.h"
 #include "NewDriveViewController.h"
 
 @interface DetailViewController () <MKMapViewDelegate>
@@ -151,9 +150,19 @@
         [self.mapView addOverlays:colorSegmentArray];
         
         // add the pins back to the map
-        [self.mapView addAnnotations:[[NewDriveViewController newDriveViewController] annotationsForDrive:self.drive]];
+        for (int i = 0; i < self.drive.pins.count; i++)
+        {
+            Pins *pins = [self.drive.pins objectAtIndex:i];
+            MKPointAnnotation *pin = [[MKPointAnnotation alloc]init];
+            pin.coordinate = CLLocationCoordinate2DMake(pins.latitude.doubleValue, pins.longitude.doubleValue);
+            pin.title = pins.title;
+            pin.subtitle = pins.subtitle;
+            [self.mapView addAnnotation:pin];
+        }
         
-    } else {
+    }
+    else
+    {
         
         // no locations were found!
         self.mapView.hidden = YES;
@@ -168,18 +177,6 @@
     }
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
-{
-    
-    MKAnnotationView *annView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"checkpoint"];
-    if (!annView) {
-        annView=[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"checkpoint"];
-        annView.image = [UIImage imageNamed:@"mapPin"];
-        annView.canShowCallout = YES;
-    }
-    
-    return annView;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

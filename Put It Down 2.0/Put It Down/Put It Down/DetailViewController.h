@@ -9,6 +9,7 @@
 #import "MathController.h"
 #import "Drive.h"
 #import "Location.h"
+#import "Pins.h"
 #import <UIKit/UIKit.h>
 
 @class Drive;

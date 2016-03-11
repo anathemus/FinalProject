@@ -8,28 +8,37 @@
 
 #import "PastDrivesViewController.h"
 #import "DetailViewController.h"
-#import "Drive.h"
 #import "DriveCell.h"
 #import "MathController.h"
 #import "BadgeController.h"
 #import "Badge.h"
-#import "Location.h"
+#import "HomeViewController.h"
 
-@interface PastDrivesViewController ()
+@interface PastDrivesViewController () <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) UIColor *redColor;
+@property (strong, nonatomic) UIColor *greenColor;
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (assign, nonatomic) CGAffineTransform transform;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation PastDrivesViewController
 
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // sets up the cells in table view
+    self.redColor = [UIColor colorWithRed:1.0f green:20/255.0 blue:44/255.0 alpha:1.0f];
+    self.greenColor = [UIColor colorWithRed:0.0f green:146/255.0 blue:78/255.0 alpha:1.0f];
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    self.transform = CGAffineTransformMakeRotation(M_PI/8);
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -48,20 +57,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%lu", (unsigned long)self.driveArray.count);
     return self.driveArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DriveCell *cell = (DriveCell *)[tableView dequeueReusableCellWithIdentifier:@"DriveCell" forIndexPath:indexPath];
-    Drive *driveObject = [self.driveArray objectAtIndex:indexPath.row];
-    
+
+    // extremely important: values from all drives are passed from the CoreData, obtained at the home page
+    self.drive = [self.driveArray objectAtIndex:indexPath.row];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
-    cell.dateLabel.text = [formatter stringFromDate:driveObject.timestamp];
     
-    cell.pickupsLabel.text = [driveObject.pickups stringValue];
+    cell.dateLabel.text = [formatter stringFromDate:self.drive.timestamp];
+    
+    NSString *pickupsCell = [NSString stringWithFormat:@"Times picked up: %i", [self.drive.pickups intValue]];
+    cell.pickupsLabel.text = pickupsCell;
     
     
     return cell;
@@ -108,8 +119,7 @@
 {
     if ([[segue destinationViewController] isKindOfClass:[DetailViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Drive *drive = [self.driveArray objectAtIndex:indexPath.row];
-        [(DetailViewController *)[segue destinationViewController] setDrive:drive];
+        [(DetailViewController *)[segue destinationViewController] setDrive:self.drive];
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  Location+CoreDataProperties.m
+//  Pins+CoreDataProperties.m
 //  Put It Down
 //
 //  Created by Benjamin A Burgess on 3/9/16.
@@ -9,13 +9,14 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Location+CoreDataProperties.h"
+#import "Pins+CoreDataProperties.h"
 
-@implementation Location (CoreDataProperties)
+@implementation Pins (CoreDataProperties)
 
 @dynamic latitude;
 @dynamic longitude;
-@dynamic timestamp;
+@dynamic subtitle;
+@dynamic title;
 @dynamic drive;
 
 @end

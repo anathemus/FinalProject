@@ -2,7 +2,7 @@
 //  Drive+CoreDataProperties.h
 //  Put It Down
 //
-//  Created by Benjamin A Burgess on 3/3/16.
+//  Created by Benjamin A Burgess on 3/9/16.
 //  Copyright © 2016 Benjamin A Burgess. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *pickups;
 @property (nullable, nonatomic, retain) NSDate *timestamp;
 @property (nullable, nonatomic, retain) NSOrderedSet<Location *> *location;
+@property (nullable, nonatomic, retain) NSOrderedSet<Pins *> *pins;
 
 @end
 
@@ -35,6 +36,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeLocationObject:(Location *)value;
 - (void)addLocation:(NSOrderedSet<Location *> *)values;
 - (void)removeLocation:(NSOrderedSet<Location *> *)values;
+
+- (void)insertObject:(Pins *)value inPinsAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromPinsAtIndex:(NSUInteger)idx;
+- (void)insertPins:(NSArray<Pins *> *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removePinsAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInPinsAtIndex:(NSUInteger)idx withObject:(Pins *)value;
+- (void)replacePinsAtIndexes:(NSIndexSet *)indexes withPins:(NSArray<Pins *> *)values;
+- (void)addPinsObject:(Pins *)value;
+- (void)removePinsObject:(Pins *)value;
+- (void)addPins:(NSOrderedSet<Pins *> *)values;
+- (void)removePins:(NSOrderedSet<Pins *> *)values;
 
 @end
 

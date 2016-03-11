@@ -81,7 +81,7 @@
     }
     else if ([nextController isKindOfClass:[PastDrivesViewController class]])
     {
-        ((PastDrivesViewController *) nextController).managedObjectContext = self.managedObjectContext;
+        ((PastDrivesViewController *) nextController).driveArray = self.driveArray;
     }
 }
 @end
