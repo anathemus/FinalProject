@@ -113,6 +113,7 @@ static float const metersInMile = 1609.344;
         
         [speeds addObject:@(speed)];
     }
+    
     // now knowing the slowest+fastest, we can get mean too
     double meanSpeed = (slowestSpeed + fastestSpeed)/2;
     

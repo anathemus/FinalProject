@@ -15,7 +15,7 @@
 
 @class GADBannerView;
 
-@interface NewDriveViewController : UIViewController<UIGestureRecognizerDelegate>
+@interface NewDriveViewController : UIViewController<UIGestureRecognizerDelegate, UIAccelerometerDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 

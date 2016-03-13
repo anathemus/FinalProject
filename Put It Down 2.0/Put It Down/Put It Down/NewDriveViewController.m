@@ -40,6 +40,7 @@ static NSString * const detailSegueName = @"DriveDetails";
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *locations;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) UIAcceleration *driveAcceleration;
 
 // instantiates the location grabbed
 @property (strong, nonatomic) CLLocation *location;
@@ -98,6 +99,9 @@ static NSString * const detailSegueName = @"DriveDetails";
     // initiate annotations array
     _annotations = [NSMutableArray array];
     
+    // initiate accelerometer
+    [[UIAccelerometer sharedAccelerometer]setDelegate:self];
+    
 }
 
 - (void)createAdBanner
@@ -113,6 +117,14 @@ static NSString * const detailSegueName = @"DriveDetails";
     [self.bannerView2 loadRequest:request];
 }
 
+- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:
+(UIAcceleration *)acceleration
+{
+    self.driveAcceleration = acceleration;
+    // NSLog([NSString stringWithFormat:@"%f",acceleration.x]);
+    // NSLog([NSString stringWithFormat:@"%f",acceleration.y]);
+    // NSLog([NSString stringWithFormat:@"%f",acceleration.z]);
+}
 
 -(IBAction)startPressed:(id)sender
 {
@@ -156,6 +168,7 @@ static NSString * const detailSegueName = @"DriveDetails";
 {
     // The drive's over so no need to update the loaction anymore.
     [self.locationManager stopUpdatingLocation];
+    [self.timer invalidate];
     // save
     if (buttonIndex == 0) {
         [self saveDrive];
@@ -179,6 +192,13 @@ static NSString * const detailSegueName = @"DriveDetails";
     self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.seconds usingLongFormat:NO]];
     self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:self.distance]];
     self.pickupLabel.text = [NSString stringWithFormat:@"Times picked up: %i",  _pickups];
+    
+    /* every second, check the accelerometer to see if phone indicates that it's at an angle that could be considered picked up.
+     */
+    if (self.driveAcceleration.x < -0.25 || self.driveAcceleration.x > 0.25 || self.driveAcceleration.y < -0.25 || self.driveAcceleration.y > 0.25)
+    {
+        [self countPickup];
+    }
 }
 
 - (void)startLocationUpdates
@@ -292,14 +312,7 @@ static NSString * const detailSegueName = @"DriveDetails";
 
 - (IBAction)Pickup:(id)sender
 {
-    self.pickups++;
-    MKPointAnnotation *pickupAnnotation = [[MKPointAnnotation alloc] init];
-    pickupAnnotation.coordinate = self.location.coordinate;
-    pickupAnnotation.title = @"Picked up";
-    pickupAnnotation.subtitle = @"You touched your phone here.";
-    [self.driveMapView addAnnotation:pickupAnnotation];
-    [self playNoTouchieSound];
-    [self.annotations addObject:pickupAnnotation];
+    [self countPickup];
     
 }
 
@@ -396,6 +409,18 @@ static NSString * const detailSegueName = @"DriveDetails";
     });
     
     return controller;
+}
+
+- (void)countPickup
+{
+    self.pickups++;
+    MKPointAnnotation *pickupAnnotation = [[MKPointAnnotation alloc] init];
+    pickupAnnotation.coordinate = self.location.coordinate;
+    pickupAnnotation.title = @"Picked up";
+    pickupAnnotation.subtitle = @"You touched your phone here.";
+    [self.driveMapView addAnnotation:pickupAnnotation];
+    [self playNoTouchieSound];
+    [self.annotations addObject:pickupAnnotation];
 }
 
 
