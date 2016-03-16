@@ -15,6 +15,7 @@
 #import "Location.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "Pins.h"
+#import <CoreMotion/CoreMotion.h>
 
 
 static NSString * const detailSegueName = @"DriveDetails";
@@ -32,15 +33,23 @@ static NSString * const detailSegueName = @"DriveDetails";
 @property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *screenTouch;
+@property (strong, nonatomic) NSTimer *notifications;
 
 // Variables to hold the timer, location, and number of times picked up
 @property int seconds;
 @property int pickups;
 @property float distance;
+@property double currentRoll;
+@property double currentPitch;
+@property double lastRoll;
+@property double lastPitch;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *locations;
 @property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, strong) UIAcceleration *driveAcceleration;
+
+@property (nonatomic, strong) CMMotionManager *motionManager;
+@property (nonatomic, strong) CMAttitude *deviceAttitude;
+
 
 // instantiates the location grabbed
 @property (strong, nonatomic) CLLocation *location;
@@ -99,8 +108,21 @@ static NSString * const detailSegueName = @"DriveDetails";
     // initiate annotations array
     _annotations = [NSMutableArray array];
     
-    // initiate accelerometer
-    [[UIAccelerometer sharedAccelerometer]setDelegate:self];
+    // initiate gyroscope updates to detect phone being picked up by the user
+    self.motionManager = [[CMMotionManager alloc]init];
+    
+    if (self.motionManager.deviceMotionAvailable) {
+        self.motionManager.deviceMotionUpdateInterval = 1.0;
+        [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *data, NSError *error)
+         {
+             self.deviceAttitude = self.motionManager.deviceMotion.attitude;
+         }];
+        
+    }
+    else
+    {
+        NSLog(@"Not available.");
+    }
     
 }
 
@@ -112,19 +134,11 @@ static NSString * const detailSegueName = @"DriveDetails";
     self.bannerView2.adUnitID = @"ca-app-pub-7531252031513293/2655042967";
     self.bannerView2.rootViewController = self;
     GADRequest *request = [GADRequest request];
-    request.testDevices = @[ @"b03ba6b32502bab9a8cabc47c31701ba" ];
+    request.testDevices = @[ kGADSimulatorID ];
     
     [self.bannerView2 loadRequest:request];
 }
 
-- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:
-(UIAcceleration *)acceleration
-{
-    self.driveAcceleration = acceleration;
-    // NSLog([NSString stringWithFormat:@"%f",acceleration.x]);
-    // NSLog([NSString stringWithFormat:@"%f",acceleration.y]);
-    // NSLog([NSString stringWithFormat:@"%f",acceleration.z]);
-}
 
 -(IBAction)startPressed:(id)sender
 {
@@ -143,10 +157,22 @@ static NSString * const detailSegueName = @"DriveDetails";
     self.seconds = 0;
     self.distance = 0;
     self.pickups = 0;
+    self.currentPitch = 0.0;
+    self.currentRoll = 0.0;
+    self.lastRoll = 0.0;
+    self.lastPitch = 0.0;
+    
     self.locations = [NSMutableArray array];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0) target:self
                                                 selector:@selector(eachSecond) userInfo:nil repeats:YES];
     [self startLocationUpdates];
+    
+    // while driving, use background local notifications to alert and bring user back to app.
+    self.notifications = [NSTimer scheduledTimerWithTimeInterval:7.0
+                                                          target:self
+                                                        selector:@selector(sendAlerts:)
+                                                        userInfo:nil
+                                                         repeats:YES];
     
     // After a delay to update the location, put down the start pin.
     [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(getStart) userInfo:nil repeats:NO];
@@ -162,13 +188,16 @@ static NSString * const detailSegueName = @"DriveDetails";
                                                     otherButtonTitles:@"Save", @"Discard", nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     [actionSheet showInView:self.view];
+    
+    // stop background notifications and alerts/pins for picking up the phone
+    [self.notifications invalidate];
+    [self.timer invalidate];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     // The drive's over so no need to update the loaction anymore.
     [self.locationManager stopUpdatingLocation];
-    [self.timer invalidate];
     // save
     if (buttonIndex == 0) {
         [self saveDrive];
@@ -193,13 +222,26 @@ static NSString * const detailSegueName = @"DriveDetails";
     self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:self.distance]];
     self.pickupLabel.text = [NSString stringWithFormat:@"Times picked up: %i",  _pickups];
     
-    /* every second, check the accelerometer to see if phone indicates that it's at an angle that could be considered picked up.
+
+    /* every second, check the device attitude to see if phone indicates that it's at an angle that could be considered picked up.
      */
-    if (self.driveAcceleration.x < -0.25 || self.driveAcceleration.x > 0.25 || self.driveAcceleration.y < -0.25 || self.driveAcceleration.y > 0.25)
+    self.currentRoll = self.deviceAttitude.roll;
+    self.currentPitch = self.deviceAttitude.pitch;
+    
+    /* get the difference in phone's angle from last second to this second 
+     */
+    if ((self.currentRoll - self.lastRoll) > 0.35  || (self.currentPitch - self.lastPitch) > 0.35  || (self.currentRoll - self.lastRoll) < -0.35  || (self.currentPitch - self.lastPitch) < -0.35)
     {
         [self countPickup];
     }
+    
+    /*NSLog(@"%f", (self.currentRoll - self.lastRoll));
+    self.lastRoll = self.currentRoll;
+    self.lastPitch = self.currentPitch;
+     */
+
 }
+
 
 - (void)startLocationUpdates
 {
@@ -423,6 +465,15 @@ static NSString * const detailSegueName = @"DriveDetails";
     [self.annotations addObject:pickupAnnotation];
 }
 
+- (void) sendAlerts:(NSTimer*)t
+{
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+    localNotification.alertBody = @"Double tap the home button and select Put It Down window to rejoin session already in progress.";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.soundName = @"/Alarm.wav";
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
 
 /*
 #pragma mark - Navigation

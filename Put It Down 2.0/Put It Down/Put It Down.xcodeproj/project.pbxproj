@@ -60,7 +60,6 @@
 		C73F630B1C88DAF800B7EAC9 /* triton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C73F62E01C88DAF800B7EAC9 /* triton.jpg */; };
 		C73F630C1C88DAF800B7EAC9 /* umbriel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C73F62E11C88DAF800B7EAC9 /* umbriel.jpg */; };
 		C73F630F1C88E6CE00B7EAC9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F630E1C88E6CE00B7EAC9 /* HomeViewController.m */; };
-		C74BB22C1C9312F400F13E71 /* PastDrivesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74BB22B1C9312F400F13E71 /* PastDrivesDetailViewController.m */; };
 		C755DDB31C8F17DF0047537B /* BadgeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C755DDB21C8F17DF0047537B /* BadgeDetailsViewController.m */; };
 		C755DDB51C8F2B1C0047537B /* Alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = C755DDB41C8F2B1C0047537B /* Alarm.wav */; };
 		C755DDBB1C8F573F0047537B /* PastDrivesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C755DDBA1C8F573F0047537B /* PastDrivesViewController.m */; };
@@ -86,6 +85,7 @@
 		C7C19EFE1C89FF6500D5863F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C19EFD1C89FF6500D5863F /* CoreLocation.framework */; };
 		C7C80BD61C8DED05002601B7 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C80BD51C8DED05002601B7 /* BadgeCell.m */; };
 		C7C80BD91C8DEE14002601B7 /* BadgesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C80BD81C8DEE14002601B7 /* BadgesTableViewController.m */; };
+		C7D8C1AF1C9845130070F856 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D8C1AE1C9845130070F856 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,8 +164,6 @@
 		C73F62E11C88DAF800B7EAC9 /* umbriel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbriel.jpg; sourceTree = "<group>"; };
 		C73F630D1C88E6CE00B7EAC9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C73F630E1C88E6CE00B7EAC9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		C74BB22A1C9312F400F13E71 /* PastDrivesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastDrivesDetailViewController.h; sourceTree = "<group>"; };
-		C74BB22B1C9312F400F13E71 /* PastDrivesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastDrivesDetailViewController.m; sourceTree = "<group>"; };
 		C755DDB11C8F17DF0047537B /* BadgeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeDetailsViewController.h; sourceTree = "<group>"; };
 		C755DDB21C8F17DF0047537B /* BadgeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeDetailsViewController.m; sourceTree = "<group>"; };
 		C755DDB41C8F2B1C0047537B /* Alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Alarm.wav; path = ../../../../../Downloads/Alarm.wav; sourceTree = "<group>"; };
@@ -212,6 +210,7 @@
 		C7C80BD51C8DED05002601B7 /* BadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
 		C7C80BD71C8DEE14002601B7 /* BadgesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesTableViewController.h; sourceTree = "<group>"; };
 		C7C80BD81C8DEE14002601B7 /* BadgesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesTableViewController.m; sourceTree = "<group>"; };
+		C7D8C1AE1C9845130070F856 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D8C1AF1C9845130070F856 /* CoreMotion.framework in Frameworks */,
 				C7C19EFE1C89FF6500D5863F /* CoreLocation.framework in Frameworks */,
 				C73F62B51C88D51500B7EAC9 /* CoreFoundation.framework in Frameworks */,
 				C73F62B61C88D51500B7EAC9 /* Foundation.framework in Frameworks */,
@@ -248,6 +248,7 @@
 		C7BBF4111C88C29400E7ED69 = {
 			isa = PBXGroup;
 			children = (
+				C7D8C1AE1C9845130070F856 /* CoreMotion.framework */,
 				C7C19EFD1C89FF6500D5863F /* CoreLocation.framework */,
 				C73F62B31C88D51500B7EAC9 /* CoreFoundation.framework */,
 				C73F62B41C88D51500B7EAC9 /* Foundation.framework */,
@@ -278,8 +279,6 @@
 				C7BBF4211C88C29400E7ED69 /* AppDelegate.m */,
 				C7BBF4291C88C29400E7ED69 /* DetailViewController.h */,
 				C7BBF42A1C88C29400E7ED69 /* DetailViewController.m */,
-				C74BB22A1C9312F400F13E71 /* PastDrivesDetailViewController.h */,
-				C74BB22B1C9312F400F13E71 /* PastDrivesDetailViewController.m */,
 				C755DDB91C8F573F0047537B /* PastDrivesViewController.h */,
 				C755DDBA1C8F573F0047537B /* PastDrivesViewController.m */,
 				C755DDBC1C8F59190047537B /* DriveCell.h */,
@@ -596,7 +595,6 @@
 				C71FEB051C8BDA9500B73DCE /* BadgeEarnStatus.m in Sources */,
 				C75891E11C909D2F0007F700 /* Drive+CoreDataProperties.m in Sources */,
 				C7BBF42B1C88C29400E7ED69 /* DetailViewController.m in Sources */,
-				C74BB22C1C9312F400F13E71 /* PastDrivesDetailViewController.m in Sources */,
 				C75891E31C909D2F0007F700 /* Pins+CoreDataProperties.m in Sources */,
 				C707F45A1C8A6839007641BD /* MulticolorPolylineSegment.m in Sources */,
 				C75891E41C909D2F0007F700 /* Pins.m in Sources */,

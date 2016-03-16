@@ -53,7 +53,7 @@
     self.bannerView1.adUnitID = @"ca-app-pub-7531252031513293/2655042967";
     self.bannerView1.rootViewController = self;
     GADRequest *request = [GADRequest request];
-    request.testDevices = @[ @"b03ba6b32502bab9a8cabc47c31701ba" ];
+    request.testDevices = @[ kGADSimulatorID ];
     
     [self.bannerView1 loadRequest:request];
 }

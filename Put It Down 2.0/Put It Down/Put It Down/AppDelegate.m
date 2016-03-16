@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "MasterViewController.h"
 #import "HomeViewController.h"
+#import "NewDriveViewController.h"
 
 @interface AppDelegate () <UINavigationControllerDelegate>
 
@@ -31,6 +32,16 @@
     
     // prevents phone from sleeping so as to be able to detect if the phone was touched
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
+    //-- Set Notification
+    if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+    {
+        // iOS 8 Notifications
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+        [application registerForRemoteNotifications];
+    }
+
     return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -147,5 +158,6 @@
         }
     }
 }
+
 
 @end

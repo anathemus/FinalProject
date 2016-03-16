@@ -13,7 +13,6 @@
 #import "BadgeController.h"
 #import "Badge.h"
 #import "HomeViewController.h"
-#import "PastDrivesDetailViewController.h"
 
 @interface PastDrivesViewController () <NSFetchedResultsControllerDelegate>
 
@@ -118,10 +117,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue destinationViewController] isKindOfClass:[PastDrivesDetailViewController class]]) {
+    if ([[segue destinationViewController] isKindOfClass:[DetailViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         self.drive = [self.driveArray objectAtIndex:indexPath.row];
-        [(PastDrivesDetailViewController *)[segue destinationViewController] setDrive:self.drive];
+        [(DetailViewController *)[segue destinationViewController] setDrive:self.drive];
     }
 }
 
