@@ -83,6 +83,9 @@
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
+      <RoutingCoverageFileReference
+         identifier = "../../../../../../Downloads/PutItDown.geojson">
+      </RoutingCoverageFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

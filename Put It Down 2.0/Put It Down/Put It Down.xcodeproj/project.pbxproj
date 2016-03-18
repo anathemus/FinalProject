@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		C707F45D1C8A80AD007641BD /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = C707F45C1C8A80AD007641BD /* Badge.m */; };
 		C707F4601C8A8193007641BD /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C707F45F1C8A8193007641BD /* BadgeController.m */; };
 		C71FEB051C8BDA9500B73DCE /* BadgeEarnStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = C71FEB041C8BDA9500B73DCE /* BadgeEarnStatus.m */; };
+		C73B24371C9A0D72004F624D /* PutItDown.geojson in Resources */ = {isa = PBXBuildFile; fileRef = C73B24361C9A0D72004F624D /* PutItDown.geojson */; };
 		C73F62A21C88D2D900B7EAC9 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73F62A11C88D2D900B7EAC9 /* GoogleMobileAds.framework */; };
 		C73F62A41C88D2E900B7EAC9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73F62A31C88D2E900B7EAC9 /* CoreData.framework */; };
 		C73F62B21C88D50600B7EAC9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73F62B11C88D50600B7EAC9 /* MapKit.framework */; };
@@ -114,6 +115,7 @@
 		C707F45F1C8A8193007641BD /* BadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeController.m; sourceTree = "<group>"; };
 		C71FEB031C8BDA9500B73DCE /* BadgeEarnStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeEarnStatus.h; sourceTree = "<group>"; };
 		C71FEB041C8BDA9500B73DCE /* BadgeEarnStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeEarnStatus.m; sourceTree = "<group>"; };
+		C73B24361C9A0D72004F624D /* PutItDown.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PutItDown.geojson; path = ../../../../Downloads/PutItDown.geojson; sourceTree = "<group>"; };
 		C73F62A11C88D2D900B7EAC9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../../GoogleMobileAdsSdkiOS-7.6.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		C73F62A31C88D2E900B7EAC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C73F62B11C88D50600B7EAC9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -248,6 +250,7 @@
 		C7BBF4111C88C29400E7ED69 = {
 			isa = PBXGroup;
 			children = (
+				C73B24361C9A0D72004F624D /* PutItDown.geojson */,
 				C7D8C1AE1C9845130070F856 /* CoreMotion.framework */,
 				C7C19EFD1C89FF6500D5863F /* CoreLocation.framework */,
 				C73F62B31C88D51500B7EAC9 /* CoreFoundation.framework */,
@@ -484,7 +487,7 @@
 				};
 			};
 			buildConfigurationList = C7BBF4151C88C29400E7ED69 /* Build configuration list for PBXProject "Put It Down" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -540,6 +543,7 @@
 				C73F62EC1C88DAF800B7EAC9 /* earth.jpg in Resources */,
 				C73F62ED1C88DAF800B7EAC9 /* enceladus.jpg in Resources */,
 				C73F62F61C88DAF800B7EAC9 /* interstellar_space.jpg in Resources */,
+				C73B24371C9A0D72004F624D /* PutItDown.geojson in Resources */,
 				C73F62EA1C88DAF800B7EAC9 /* deimos.jpg in Resources */,
 				C73F62F31C88DAF800B7EAC9 /* Icon-Settings.png in Resources */,
 				C73F62EB1C88DAF800B7EAC9 /* dione.jpg in Resources */,
@@ -745,6 +749,7 @@
 				ENABLE_BITCODE = NO;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/benjaminaburgess/GoogleMobileAdsSdkiOS-7.6.0";
 				INFOPLIST_FILE = "Put It Down/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benjaminaburgess.PutItDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -761,6 +766,7 @@
 				ENABLE_BITCODE = NO;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/benjaminaburgess/GoogleMobileAdsSdkiOS-7.6.0";
 				INFOPLIST_FILE = "Put It Down/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benjaminaburgess.PutItDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -235,10 +235,14 @@ static NSString * const detailSegueName = @"DriveDetails";
         [self countPickup];
     }
     
-    /*NSLog(@"%f", (self.currentRoll - self.lastRoll));
+    /*
+    NSLog(@"%f", (self.currentRoll - self.lastRoll));
+    NSLog(@"%f\n*", (self.currentPitch - self.lastPitch));
+    */
+     
     self.lastRoll = self.currentRoll;
     self.lastPitch = self.currentPitch;
-     */
+    
 
 }
 
