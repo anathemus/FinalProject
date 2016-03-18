@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10169.1" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Drive" representedClassName="Drive" syncable="YES">
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pickups" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="location" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Location" inverseName="drive" inverseEntity="Location" syncable="YES"/>
+        <relationship name="pins" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Pins" inverseName="drive" inverseEntity="Pins" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="drive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Drive" inverseName="location" inverseEntity="Drive" syncable="YES"/>
+    </entity>
+    <entity name="Pins" representedClassName="Pins" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="drive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Drive" inverseName="pins" inverseEntity="Drive" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Drive" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="Location" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Pins" positionX="-63" positionY="36" width="128" height="120"/>
+    </elements>
+</model>

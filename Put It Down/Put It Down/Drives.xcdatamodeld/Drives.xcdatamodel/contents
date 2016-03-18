@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Drive" syncable="YES"/>
+    <entity name="Location" syncable="YES"/>
+    <elements>
+        <element name="Location" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Drive" positionX="-54" positionY="-9" width="128" height="30"/>
+    </elements>
+</model>

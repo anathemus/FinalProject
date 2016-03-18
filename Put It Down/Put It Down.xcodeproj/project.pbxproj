@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C73751E51C4092D600555433 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73751E41C4092D600555433 /* iAd.framework */; };
+		C746613B1C875600003CCDB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C746613A1C875600003CCDB0 /* MapKit.framework */; };
 		C7698CE21C4989E600CE0C3C /* PIDwheel58.png in Resources */ = {isa = PBXBuildFile; fileRef = C7698CE11C4989E600CE0C3C /* PIDwheel58.png */; };
 		C7698CE41C498A3900CE0C3C /* PIDwheel87.png in Resources */ = {isa = PBXBuildFile; fileRef = C7698CE31C498A3900CE0C3C /* PIDwheel87.png */; };
 		C7698CE61C498AA600CE0C3C /* PIDwheel180.png in Resources */ = {isa = PBXBuildFile; fileRef = C7698CE51C498AA600CE0C3C /* PIDwheel180.png */; };
@@ -22,6 +22,13 @@
 		C790AA901C17948D004FE039 /* Put_It_DownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA8F1C17948D004FE039 /* Put_It_DownTests.m */; };
 		C790AA9B1C17948D004FE039 /* Put_It_DownUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C790AA9A1C17948D004FE039 /* Put_It_DownUITests.m */; };
 		C790AAA91C179506004FE039 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C790AAA81C179506004FE039 /* CoreLocation.framework */; };
+		C79CA8FC1C8798E30002523E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74661371C87503A003CCDB0 /* GoogleMobileAds.framework */; };
+		C7BEC3CF1C88704000847549 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7BEC3CE1C88704000847549 /* CoreData.framework */; };
+		C7BEC3D21C8870A000847549 /* Driver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7BEC3D01C8870A000847549 /* Driver.xcdatamodeld */; };
+		C7BEC3DB1C88771900847549 /* Drive+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BEC3D41C88771900847549 /* Drive+CoreDataProperties.m */; };
+		C7BEC3DC1C88771900847549 /* Drive.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BEC3D61C88771900847549 /* Drive.m */; };
+		C7BEC3DD1C88771900847549 /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BEC3D81C88771900847549 /* Location+CoreDataProperties.m */; };
+		C7BEC3DE1C88771900847549 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BEC3DA1C88771900847549 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C73751E41C4092D600555433 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		C74661371C87503A003CCDB0 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../GoogleMobileAdsSdkiOS-7.6.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		C746613A1C875600003CCDB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C7698CE11C4989E600CE0C3C /* PIDwheel58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIDwheel58.png; sourceTree = "<group>"; };
 		C7698CE31C498A3900CE0C3C /* PIDwheel87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIDwheel87.png; sourceTree = "<group>"; };
 		C7698CE51C498AA600CE0C3C /* PIDwheel180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIDwheel180.png; sourceTree = "<group>"; };
@@ -66,6 +74,16 @@
 		C790AA9A1C17948D004FE039 /* Put_It_DownUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Put_It_DownUITests.m; sourceTree = "<group>"; };
 		C790AA9C1C17948D004FE039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C790AAA81C179506004FE039 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C7BEC3CE1C88704000847549 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C7BEC3D11C8870A000847549 /* Driver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Driver.xcdatamodel; sourceTree = "<group>"; };
+		C7BEC3D31C88771900847549 /* Drive+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Drive+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C7BEC3D41C88771900847549 /* Drive+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Drive+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C7BEC3D51C88771900847549 /* Drive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drive.h; sourceTree = "<group>"; };
+		C7BEC3D61C88771900847549 /* Drive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drive.m; sourceTree = "<group>"; };
+		C7BEC3D71C88771900847549 /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C7BEC3D81C88771900847549 /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
+		C7BEC3D91C88771900847549 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		C7BEC3DA1C88771900847549 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +91,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C73751E51C4092D600555433 /* iAd.framework in Frameworks */,
+				C7BEC3CF1C88704000847549 /* CoreData.framework in Frameworks */,
+				C79CA8FC1C8798E30002523E /* GoogleMobileAds.framework in Frameworks */,
+				C746613B1C875600003CCDB0 /* MapKit.framework in Frameworks */,
 				C790AAA91C179506004FE039 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +118,9 @@
 		C790AA661C17948D004FE039 = {
 			isa = PBXGroup;
 			children = (
-				C73751E41C4092D600555433 /* iAd.framework */,
+				C7BEC3CE1C88704000847549 /* CoreData.framework */,
+				C746613A1C875600003CCDB0 /* MapKit.framework */,
+				C74661371C87503A003CCDB0 /* GoogleMobileAds.framework */,
 				C790AAA81C179506004FE039 /* CoreLocation.framework */,
 				C790AA711C17948D004FE039 /* Put It Down */,
 				C790AA8E1C17948D004FE039 /* Put It DownTests */,
@@ -130,6 +152,15 @@
 				C790AA811C17948D004FE039 /* Assets.xcassets */,
 				C790AA831C17948D004FE039 /* LaunchScreen.storyboard */,
 				C790AA861C17948D004FE039 /* Info.plist */,
+				C7BEC3D01C8870A000847549 /* Driver.xcdatamodeld */,
+				C7BEC3D31C88771900847549 /* Drive+CoreDataProperties.h */,
+				C7BEC3D41C88771900847549 /* Drive+CoreDataProperties.m */,
+				C7BEC3D51C88771900847549 /* Drive.h */,
+				C7BEC3D61C88771900847549 /* Drive.m */,
+				C7BEC3D71C88771900847549 /* Location+CoreDataProperties.h */,
+				C7BEC3D81C88771900847549 /* Location+CoreDataProperties.m */,
+				C7BEC3D91C88771900847549 /* Location.h */,
+				C7BEC3DA1C88771900847549 /* Location.m */,
 				C790AA721C17948D004FE039 /* Supporting Files */,
 			);
 			path = "Put It Down";
@@ -237,6 +268,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 					C790AA8A1C17948D004FE039 = {
@@ -307,8 +341,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7BEC3D21C8870A000847549 /* Driver.xcdatamodeld in Sources */,
 				C790AA7D1C17948D004FE039 /* SecondViewController.m in Sources */,
+				C7BEC3DB1C88771900847549 /* Drive+CoreDataProperties.m in Sources */,
 				C790AA771C17948D004FE039 /* AppDelegate.m in Sources */,
+				C7BEC3DE1C88771900847549 /* Location.m in Sources */,
+				C7BEC3DD1C88771900847549 /* Location+CoreDataProperties.m in Sources */,
+				C7BEC3DC1C88771900847549 /* Drive.m in Sources */,
 				C790AA7A1C17948D004FE039 /* FirstViewController.m in Sources */,
 				C790AA741C17948D004FE039 /* main.m in Sources */,
 			);
@@ -450,7 +489,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/benjaminaburgess/GoogleMobileAdsSdkiOS-7.6.0";
 				INFOPLIST_FILE = "Put It Down/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benjaminaburgess.PutItDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,7 +505,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/benjaminaburgess/GoogleMobileAdsSdkiOS-7.6.0";
 				INFOPLIST_FILE = "Put It Down/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benjaminaburgess.PutItDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,6 +604,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C7BEC3D01C8870A000847549 /* Driver.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C7BEC3D11C8870A000847549 /* Driver.xcdatamodel */,
+			);
+			currentVersion = C7BEC3D11C8870A000847549 /* Driver.xcdatamodel */;
+			path = Driver.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C790AA671C17948D004FE039 /* Project object */;
 }

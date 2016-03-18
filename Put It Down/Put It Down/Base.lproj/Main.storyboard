@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment version="2320" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Driver-->
@@ -29,7 +28,7 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJB-GL-6E9">
-                                <rect key="frame" x="275" y="214" width="50" height="21"/>
+                                <rect key="frame" x="275" y="130" width="50" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wJB-GL-6E9" secondAttribute="height" multiplier="50:21" id="Xab-xW-uK3"/>
                                 </constraints>
@@ -38,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-pT-Pox">
-                                <rect key="frame" x="288" y="243" width="25" height="21"/>
+                                <rect key="frame" x="288" y="159" width="25" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ibr-pT-Pox" secondAttribute="height" multiplier="25:21" id="dcr-oU-Avt"/>
                                 </constraints>
@@ -55,38 +54,56 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FmI-1N-jvg">
-                                <rect key="frame" x="60" y="485" width="480" height="50"/>
-                            </adBannerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customize Notifications" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLI-tO-ROt">
-                                <rect key="frame" x="216" y="350" width="168" height="30"/>
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdO-iU-Ybr" customClass="GADBannerView">
+                                <rect key="frame" x="140" y="486" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OP8-Qk-9c5"/>
+                                    <constraint firstAttribute="width" constant="320" id="mjD-Ql-7X9"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fp-V1-CG2">
+                                <rect key="frame" x="180" y="298" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="g6M-Th-MH9"/>
+                                </constraints>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customize Notifications" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLI-tO-ROt">
+                                <rect key="frame" x="213" y="206" width="175" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="textEdited:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="KMK-Wv-lHO"/>
                                     <action selector="textEntered:" destination="9pv-A4-QxB" eventType="editingDidEndOnExit" id="J0m-9t-CyS"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.2196078431372549" green="0.69019607843137254" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="uLI-tO-ROt" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="5hL-97-MEm"/>
-                            <constraint firstItem="ibr-pT-Pox" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="243" id="AAY-DT-Nfb"/>
+                            <constraint firstItem="cdO-iU-Ybr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="18a-OG-GQI"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cdO-iU-Ybr" secondAttribute="bottom" constant="15" id="730-xW-2IL"/>
+                            <constraint firstItem="cdO-iU-Ybr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8UV-Ex-6Pf"/>
+                            <constraint firstItem="ibr-pT-Pox" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="159" id="AAY-DT-Nfb"/>
+                            <constraint firstItem="9fp-V1-CG2" firstAttribute="top" secondItem="uLI-tO-ROt" secondAttribute="bottom" constant="62" id="AGg-Uv-LjM"/>
                             <constraint firstItem="wJB-GL-6E9" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="BT0-gr-hBq"/>
                             <constraint firstItem="isv-9n-R4h" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="83" id="LTc-rt-AhX"/>
-                            <constraint firstItem="ibr-pT-Pox" firstAttribute="top" secondItem="wJB-GL-6E9" secondAttribute="bottom" constant="8" symbolic="YES" id="LhK-9n-mdT"/>
+                            <constraint firstItem="ibr-pT-Pox" firstAttribute="top" secondItem="wJB-GL-6E9" secondAttribute="bottom" constant="8" id="LhK-9n-mdT"/>
                             <constraint firstItem="ibr-pT-Pox" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="NY4-du-LTE"/>
-                            <constraint firstItem="FmI-1N-jvg" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="Pz0-PV-b9z"/>
                             <constraint firstItem="isv-9n-R4h" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="8" symbolic="YES" id="Vfg-ac-MCd"/>
+                            <constraint firstItem="cdO-iU-Ybr" firstAttribute="top" secondItem="9fp-V1-CG2" secondAttribute="bottom" constant="60" id="Yow-ti-iSt"/>
+                            <constraint firstItem="uLI-tO-ROt" firstAttribute="centerX" secondItem="ibr-pT-Pox" secondAttribute="centerX" id="iac-cN-vUr"/>
+                            <constraint firstItem="9fp-V1-CG2" firstAttribute="centerX" secondItem="uLI-tO-ROt" secondAttribute="centerX" id="kd8-ig-TjX"/>
+                            <constraint firstItem="uLI-tO-ROt" firstAttribute="top" secondItem="ibr-pT-Pox" secondAttribute="bottom" constant="26" id="rgT-yF-vxE"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="rq4-HP-rfD"/>
                             <constraint firstItem="isv-9n-R4h" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="vtv-xx-Jya"/>
-                            <constraint firstItem="FmI-1N-jvg" firstAttribute="centerX" secondItem="ibr-pT-Pox" secondAttribute="centerX" id="wh3-GN-qaV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Driver" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="bannerView1" destination="FmI-1N-jvg" id="y7y-eV-199"/>
+                        <outlet property="bannerView1" destination="cdO-iU-Ybr" id="Eeg-uq-cdm"/>
                         <outlet property="customText" destination="uLI-tO-ROt" id="bQs-h6-dIQ"/>
                         <outlet property="driver" destination="isv-9n-R4h" id="Mxg-tO-WFS"/>
+                        <outlet property="mapView" destination="9fp-V1-CG2" id="k7f-M3-8Pq"/>
                         <outlet property="speed" destination="ibr-pT-Pox" id="rWH-32-Dsq"/>
                     </connections>
                 </viewController>
@@ -127,37 +144,28 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BmR-im-icz">
-                                <rect key="frame" x="60" y="477" width="480" height="66"/>
-                            </adBannerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQw-lE-xJu" customClass="GADBannerView">
+                                <rect key="frame" x="141" y="493" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3nU-or-2XB"/>
+                                    <constraint firstAttribute="width" constant="320" id="sIm-7M-cHc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.69019607839999997" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="VQw-lE-xJu" secondAttribute="bottom" constant="8" symbolic="YES" id="1O9-FR-pfc"/>
                             <constraint firstItem="A4o-Bg-HLK" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="1mg-WR-itW"/>
-                            <constraint firstItem="BmR-im-icz" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="210" id="4vm-Zk-4hJ"/>
-                            <constraint firstItem="BmR-im-icz" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-84" id="DEU-FK-4Ed"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="BmR-im-icz" secondAttribute="bottom" id="O0K-Sw-8GY"/>
-                            <constraint firstItem="BmR-im-icz" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="227" id="a34-Vm-BF4"/>
+                            <constraint firstItem="VQw-lE-xJu" firstAttribute="centerX" secondItem="m5a-Ln-Z8O" secondAttribute="centerX" id="FoH-NC-5vj"/>
                             <constraint firstItem="A4o-Bg-HLK" firstAttribute="centerX" secondItem="m5a-Ln-Z8O" secondAttribute="centerX" id="aJj-UM-iha"/>
-                            <constraint firstItem="A4o-Bg-HLK" firstAttribute="centerX" secondItem="BmR-im-icz" secondAttribute="centerX" id="dWB-EE-dBy"/>
                             <constraint firstItem="m5a-Ln-Z8O" firstAttribute="top" secondItem="A4o-Bg-HLK" secondAttribute="bottom" constant="18" id="dex-BA-8bd"/>
-                            <constraint firstItem="BmR-im-icz" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="m3U-ht-UVu"/>
-                            <constraint firstItem="BmR-im-icz" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="nEz-Tk-QdO"/>
-                            <constraint firstItem="BmR-im-icz" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="rPc-dq-U7l"/>
-                            <constraint firstItem="BmR-im-icz" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="40" id="suS-7c-V8S"/>
                             <constraint firstItem="A4o-Bg-HLK" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="19" id="tIn-sI-khg"/>
                             <constraint firstItem="A4o-Bg-HLK" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="uTB-6P-p9f"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="dWB-EE-dBy"/>
                                 <exclude reference="uTB-6P-p9f"/>
-                                <exclude reference="4vm-Zk-4hJ"/>
-                                <exclude reference="DEU-FK-4Ed"/>
-                                <exclude reference="a34-Vm-BF4"/>
-                                <exclude reference="m3U-ht-UVu"/>
-                                <exclude reference="rPc-dq-U7l"/>
-                                <exclude reference="suS-7c-V8S"/>
                             </mask>
                         </variation>
                     </view>
@@ -166,7 +174,7 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="about" destination="m5a-Ln-Z8O" id="ztk-gd-Mxm"/>
-                        <outlet property="bannerView2" destination="BmR-im-icz" id="KUs-sx-4EN"/>
+                        <outlet property="bannerView2" destination="VQw-lE-xJu" id="Cpx-Aa-qTg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
